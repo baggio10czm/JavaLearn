@@ -7,6 +7,9 @@
     <servlet>
         <servlet-name>servlet</servlet-name>
         <servlet-class>com.czm127.servlet.ServletDemo</servlet-class>
+<!--        指定Servlet创建时机
+            load-on-startup 值为 "负数" 为第一次访问启动（默认）  "0or正整数" 就是服务器启动时启动 -->
+        <load-on-startup>-1</load-on-startup>
     </servlet>
 
     <servlet-mapping>
