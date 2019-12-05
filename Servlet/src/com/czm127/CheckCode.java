@@ -24,12 +24,14 @@ public class CheckCode extends HttpServlet {
         graphics.setColor(Color.pink);
         graphics.fillRect(0, 0, width, height);
 
+        // 画边框
         graphics.setColor(Color.MAGENTA);
         graphics.drawRect(0, 0, width-1, height-1);
 
         String str = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwwyz0123456789";
         Random random = new Random();
 
+        // 随机画4个码
         for (int i = 0; i < 4; i++) {
             int index = random.nextInt(str.length());
             char c = str.charAt(index);
@@ -41,9 +43,8 @@ public class CheckCode extends HttpServlet {
         //graphics.drawString("M",60,25);
         //graphics.drawString("G",80,25);
 
-        // 画干扰线
+        // 画10条干扰线
         graphics.setColor(Color.green);
-
         for (int i = 0; i < 10; i++) {
             // 随机生成坐标点
             int x1 = random.nextInt(width);
