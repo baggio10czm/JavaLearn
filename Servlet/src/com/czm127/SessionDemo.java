@@ -16,9 +16,7 @@ public class SessionDemo extends HttpServlet {
         cookie.setMaxAge(60 * 60);
         response.addCookie(cookie);
 
-
         // Tomcat服务器可自动把 session 钝化  启动
-
 
     }
 

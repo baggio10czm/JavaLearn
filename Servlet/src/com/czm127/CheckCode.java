@@ -1,5 +1,7 @@
 package com.czm127;
 
+import javafx.css.Size;
+
 import javax.imageio.ImageIO;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -31,12 +33,23 @@ public class CheckCode extends HttpServlet {
         String str = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwwyz0123456789";
         Random random = new Random();
 
+        graphics.setColor(Color.BLACK);
+        graphics.setFont(new Font("Arial",Font.ITALIC,20));
+
+        StringBuilder stringBuilder = new StringBuilder();
+
         // 随机画4个码
-        for (int i = 0; i < 4; i++) {
+        for (int i = 1; i < 5; i++) {
             int index = random.nextInt(str.length());
             char c = str.charAt(index);
+            stringBuilder.append(c);
+            // 第2，3个参数为x，y轴坐标
             graphics.drawString(c+"",width/5*i,height/2);
         }
+
+        final String s = stringBuilder.toString();
+        // 将验证码存入 session
+        request.getSession().setAttribute("checkCode", s);
 
         //graphics.drawString("c",20,25);
         //graphics.drawString("Z",40,25);
