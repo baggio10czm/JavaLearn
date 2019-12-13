@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
+         version="4.0">
+    <filter>
+        <filter-name>demo</filter-name>
+        <filter-class>com.czm127.filter.FilterDemo</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>demo</filter-name>
+        <!-- 拦截路径: /filterDemo -->
+        <url-pattern>/filterDemo</url-pattern>
+        <!-- 拦截路径: /user下所有资源 -->
+        <url-pattern>/user/*</url-pattern>
+        <!-- 拦截路径: 所有.jsp文件 -->
+<!--        <url-pattern>*.jsp</url-pattern>-->
+        <!-- 拦截路径: 所有资源 -->
+<!--        <url-pattern>/*</url-pattern>-->
+<!--        拦截方式 -->
+<!--        <dispatcher>REQUEST</dispatcher>-->
+<!--        <dispatcher>FORWARD</dispatcher>-->
+<!--        <dispatcher>INCLUDE</dispatcher>-->
+<!--        <dispatcher> ASYNC</dispatcher>-->
+<!--        <dispatcher> ERROR</dispatcher>-->
+    </filter-mapping>
+</web-app>
